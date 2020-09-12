@@ -1,0 +1,1 @@
+var ability ={"blue":{"b1":"Desperate-Duel","b2":"Desperate-Duel","b3":"Desperate-Duel","b4":"Desperate-Duel","b5":"Desperate-Duel"},"red":{"r1":"Desperate-Duel","r2":"Desperate-Duel","r3":"Desperate-Duel","r4":"Desperate-Duel","r5":"Desperate-Duel"}}

@@ -1,0 +1,1 @@
+var teamname = {"bluename":"ทีมสีน้ำเงิน","redname":"ทีมสีน้ำแดง"}

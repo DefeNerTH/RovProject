@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <title>เปลี่ยนชื่อทีม</title>
+</head>
+<body>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Blue</th>
+            <th scope="col">Red</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" class="form-control" id="blue">
+            </td>
+            <td>
+              <input type="text" class="form-control" id="red">
+            </td>
+          </tr>
+        </tbody>
+        <tr>
+            <td colspan="4">
+                <button type="button" id="AbilitySubmit" class="btn btn-success">save</button>
+            </td>
+        </tr>
+      </table>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $('#AbilitySubmit').click(function(){
+            
+            var blue = $('#blue').val();
+            var red = $('#red').val();
+
+            var tempSetting = 'var teamname = {"bluename":"' + blue + '","redname":"' + red + '"}';
+
+            var blob = new Blob([tempSetting],
+                {
+                    type:"application/json;utf - 8"
+                }
+            )
+            
+            var link = document.createElement('a');
+            link.setAttribute('download','teamname.txt');
+            link.setAttribute('href',window.URL.createObjectURL(blob));
+            link.click();
+        });
+    });
+</script>

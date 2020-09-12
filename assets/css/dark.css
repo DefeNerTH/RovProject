@@ -1,0 +1,20 @@
+html,body{
+    height: 1080px;
+    width: 1920px;
+    margin: 0;
+    padding: 0;
+    font-family: Kanit,sans-serif;
+}
+.bg{
+    height: 1080px;
+    width: 1920px;
+    position: absolute;
+}
+
+#timer{
+    position: absolute;
+    right: 190px;
+    top: 104px;
+    font-size: 48px;
+    color: white;
+}

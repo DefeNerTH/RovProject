@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <title>เลือก Theme</title>
+</head>
+<body>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">เลือก Theme</th>
+            <td>
+                <select class="form-control" id="theme">
+                    <option value="" disabled selected hidden>Choose a Theme</option>
+                    <option value="APL2020">APL2020</option>
+                    <option value="Proleague2020">Proleague2020</option>
+                  </select>
+            </td>
+        </tbody>
+        <tr>
+            <td colspan="4">
+                <button type="button" id="AbilitySubmit" class="btn btn-success">save</button>
+            </td>
+        </tr>
+      </table>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $('#AbilitySubmit').click(function(){
+            
+            var theme = $('#theme').val();
+
+            var tempSetting = 'var base = {"base":"'+theme+'"}';
+
+            var blob = new Blob([tempSetting],
+                {
+                    type:"application/json;utf - 8"
+                }
+            )
+            
+            var link = document.createElement('a');
+            link.setAttribute('download','base.txt');
+            link.setAttribute('href',window.URL.createObjectURL(blob));
+            link.click();
+        });
+    });
+</script>
